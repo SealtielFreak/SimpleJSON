@@ -1,5 +1,5 @@
 # SimpleJSON
-Simple C++ JSON library
+> *SimpleJSON* is a library for C++, this is a fork of [nbsdx/SimpleJSON](https://github.com/nbsdx/SimpleJSON)
 
 ## License
 [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
