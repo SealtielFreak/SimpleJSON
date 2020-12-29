@@ -70,8 +70,8 @@ namespace json {
 
             BackingData() : Int(0) {}
 
-            deque<JSON> *List;
-            map<string, JSON> *Map;
+            deque <JSON> *List;
+            map <string, JSON> *Map;
             string *String;
             double Float;
             long Int;
@@ -131,7 +131,7 @@ namespace json {
 
         JSON() : Internal(), Type(Class::Null) {}
 
-        JSON(initializer_list<JSON> list)
+        JSON(initializer_list <JSON> list)
                 : JSON() {
             SetType(Class::Object);
             for (auto i = list.begin(), e = list.end(); i != e; ++i, ++i)
@@ -373,29 +373,37 @@ namespace json {
             return ok ? Internal.Bool : false;
         }
 
-        JSONWrapper<map<string, JSON>> ObjectRange() {
+        JSONWrapper<map < string, JSON>> ObjectRange() {
             if (Type == Class::Object)
-                return JSONWrapper<map<string, JSON>>(Internal.Map);
-            return JSONWrapper<map<string, JSON>>(nullptr);
+                return JSONWrapper<map < string, JSON>>
+            (Internal.Map);
+            return JSONWrapper<map < string, JSON>>
+            (nullptr);
         }
 
-        JSONWrapper<deque<JSON>> ArrayRange() {
+        JSONWrapper<deque < JSON>> ArrayRange() {
             if (Type == Class::Array)
-                return JSONWrapper<deque<JSON>>(Internal.List);
-            return JSONWrapper<deque<JSON>>(nullptr);
+                return JSONWrapper<deque < JSON>>
+            (Internal.List);
+            return JSONWrapper<deque < JSON>>
+            (nullptr);
         }
 
-        JSONConstWrapper<map<string, JSON>> ObjectRange() const {
+        JSONConstWrapper<map < string, JSON>> ObjectRange() const {
             if (Type == Class::Object)
-                return JSONConstWrapper<map<string, JSON>>(Internal.Map);
-            return JSONConstWrapper<map<string, JSON>>(nullptr);
+                return JSONConstWrapper<map < string, JSON>>
+            (Internal.Map);
+            return JSONConstWrapper<map < string, JSON>>
+            (nullptr);
         }
 
 
-        JSONConstWrapper<deque<JSON>> ArrayRange() const {
+        JSONConstWrapper<deque < JSON>> ArrayRange() const {
             if (Type == Class::Array)
-                return JSONConstWrapper<deque<JSON>>(Internal.List);
-            return JSONConstWrapper<deque<JSON>>(nullptr);
+                return JSONConstWrapper<deque < JSON>>
+            (Internal.List);
+            return JSONConstWrapper<deque < JSON>>
+            (nullptr);
         }
 
         string dump(int depth = 1, string tab = "  ") const {
